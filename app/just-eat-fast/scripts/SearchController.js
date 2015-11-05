@@ -38,7 +38,7 @@ angular
         };
         restaurants[key].Meal.Main = {
           name: $scope.simulatedMeals['indian'].mains[$scope.random(0, 2)],
-          price: Math.min(((maxPrice / 4) * $scope.random(1.5, 2)).toFixed(2), 5)
+          price: Math.min(((maxPrice / 4) * $scope.random(1.75, 2)).toFixed(2), 5)
         };
         restaurants[key].Meal.Drink = {
           name: $scope.simulatedMeals['indian'].drinks[$scope.random(0, 2)],

@@ -1,19 +1,23 @@
 <div class="padding" ng-controller="SearchController">
   <super-navbar>
-    <super-navbar-title>Restaurants</super-navbar-title>
+    <super-navbar-title ng-bind-template="{{Postcode | uppercase}}">
+    <!-- <super-navbar-title ng-bind-template="{{Postcode | uppercase}} &pound;{{MaxPrice}}"> -->
+    </super-navbar-title>
   </super-navbar>
 
-  Max price: &pound;{{ MaxPrice}}
-  <ul ng-repeat="restaurant in restaurants">
-    <li><img ng-src="{{restaurant.Logo[0].StandardResolutionURL}}" class="img-circle"></li>
-    <li>{{restaurant.Name}} {{ restaurant.RatingStars}}</li>
-    <li>
-      <ul ng-repeat="cuisineType in restaurant.CuisineTypes">
-        <li> - {{cuisineType.Name}}</li>
-      </ul>
-    </li>
-    <li>{{restaurant.Meal.Starter.name}} {{restaurant.Meal.Starter.price}}</li>
-    <li>{{restaurant.Meal.Main.name}} {{restaurant.Meal.Main.price}}</li>
-    <li>{{restaurant.Meal.Drink.name}} {{restaurant.Meal.Drink.price}}</li>
-  </ul>
+  <div class="list">
+    <div class="item">{{NumberOfTakeawaysFound}} takeaways found</div>
+    <div ng-repeat="restaurant in Restaurants">
+      <div class="item item-thumbnail-left">
+        <img ng-src="{{restaurant.Logo[0].StandardResolutionURL}}">
+        <h2>{{restaurant.Name}}</h2>
+        <p>
+          <ul ng-repeat="cuisineType in restaurant.CuisineTypes">
+            <li>{{cuisineType.Name}}</li>
+          </ul>
+        </p>
+        <p>{{ restaurant.RatingStars}} <i class="icon super-star"></i> ({{restaurant.NumberOfRatings}})</p>
+      </div>
+    </div>
+  </div>
 </div>

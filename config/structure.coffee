@@ -1,18 +1,5 @@
 module.exports =
 
-  tabs: [
-    {
-      title: "Just Eat"
-      id: "just-eat"
-      location: "just-eat#search"
-    }
-    {
-      title: "Just Eat"
-      id: "just-eat-fast"
-      location: "just-eat-fast#search"
-    }
-  ]
-
   rootView:
     location: "just-eat#search"
 
@@ -35,6 +22,15 @@ module.exports =
     options:
       animation: "swingingDoor"
 
-  # initialView:
-  #   id: "initialView"
-  #   location: "example#initial-view"
+  # tabs: [
+  #   {
+  #     title: "Just Eat"
+  #     id: "just-eat"
+  #     location: "just-eat#search"
+  #   }
+  #   {
+  #     title: "Just Eat Fast!"
+  #     id: "just-eat-fast"
+  #     location: "just-eat-fast#search"
+  #   }
+  # ]

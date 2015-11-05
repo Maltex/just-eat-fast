@@ -1,32 +1,36 @@
-<div class="padding">
-
+<style>
+.text-center {
+  text-align:center;
+}
+.input-icon {
+  padding-right:12px;
+}
+</style>
+<div class="padding" ng-controller="SearchController">
   <super-navbar>
+    <super-navbar-button side='left' onclick="supersonic.ui.drawers.open('left')">
+      &equiv;
+    </super-navbar-button>
     <super-navbar-title>
-      Just Eat Fast
+      JUST EAT
     </super-navbar-title>
   </super-navbar>
 
   <form name="searchForm">
   <div class="row responsive-sm">
-    <div class="col">
-      <div class="list list-inset">
-        <label class="item item-input">
-          <i class="icon super-location placeholder-icon"></i>
-          <input type="text" ng-model="postcode" name="postcode" placeholder="Postcode" required pattern="^(([A-Za-z0-9]{1,4})\s([A-Za-z0-9]{3}))|([A-Za-z0-9]{3,7})$">
-        </label>
-        <span class="error" ng-show="searchForm.postcode.$error.pattern">Not a valid postcode</span>
-
-      </div>
-      <div class="list list-inset">
-        <label class="item item-input">
-          <i class="icon placeholder-icon">&pound;</i>
-          <input type="number" ng-model="price" name="price" placeholder="Maximum">
-        </label>
-      </div>
-      <super-navigate ng-attr-location="app/just-eat/restaurants.html?postcode={{postcode}}&amp;price={{price}}">
-        <button class="button button-block button-assertive">Find takeaways</button>
-      </super-navigate>
-      </div>
+    <div class="text-center">
+      <h3>Order takeaway online</h3>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" ng-model="Postcode" name="postcode" placeholder="Postcode" required pattern="^(([A-Za-z0-9]{1,4})\s([A-Za-z0-9]{3}))|([A-Za-z0-9]{3,7})$">
+        <i class="icon super-pinpoint input-icon placeholder-icon" ng-click="GetPostcode()"></i>
+      </label>
+      <span class="error" ng-show="searchForm.postcode.$touched && searchForm.postcode.$invalid && searchForm.postcode.$error.pattern">Not a valid postcode</span>
+    </div>
+    <super-navigate ng-attr-location="app/just-eat/restaurants.html?postcode={{Postcode}}">
+      <button class="button button-block button-energized">Find takeaways</button>
+    </super-navigate>
     </div>
   </form>
 </div>
