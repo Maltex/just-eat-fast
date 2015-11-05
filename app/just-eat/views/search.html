@@ -1,0 +1,32 @@
+<div class="padding">
+
+  <super-navbar>
+    <super-navbar-title>
+      Just Eat Fast
+    </super-navbar-title>
+  </super-navbar>
+
+  <form name="searchForm">
+  <div class="row responsive-sm">
+    <div class="col">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon super-location placeholder-icon"></i>
+          <input type="text" ng-model="postcode" name="postcode" placeholder="Postcode" required pattern="^(([A-Za-z0-9]{1,4})\s([A-Za-z0-9]{3}))|([A-Za-z0-9]{3,7})$">
+        </label>
+        <span class="error" ng-show="searchForm.postcode.$error.pattern">Not a valid postcode</span>
+
+      </div>
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon placeholder-icon">&pound;</i>
+          <input type="number" ng-model="price" name="price" placeholder="Maximum">
+        </label>
+      </div>
+      <super-navigate ng-attr-location="app/just-eat/restaurants.html?postcode={{postcode}}&amp;price={{price}}">
+        <button class="button button-block button-assertive">Find takeaways</button>
+      </super-navigate>
+      </div>
+    </div>
+  </form>
+</div>
