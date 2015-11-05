@@ -6,14 +6,16 @@
     </super-navbar-title>
   </super-navbar>
 
+  <form name="restaurantform">
   <div class="row responsive-sm">
     <div class="col">
       <div class="list list-inset">
         <label class="item item-input">
-          <span class="error" ng-show="restaurant-form.postcode.$error.pattern">Not a valid postcode</span>
           <i class="icon super-location placeholder-icon"></i>
-          <input type="text" ng-model="postcode" name="postcode" placeholder="Postcode" required pattern="^(GIR 0AA)|(((A[BL]|B[ABDHLNRSTX]?|C[ABFHMORTVW]|D[ADEGHLNTY]|E[HNX]?|F[KY]|G[LUY]?|H[ADGPRSUX]|I[GMPV]|JE|K[ATWY]|L[ADELNSU]?|M[EKL]?|N[EGNPRW]?|O[LX]|P[AEHLOR]|R[GHM]|S[AEGKLMNOPRSTY]?|T[ADFNQRSW]|UB|W[ADFNRSV]|YO|ZE)[1-9]?[0-9]|((E|N|NW|SE|SW|W)1|EC[1-4]|WC[12])[A-HJKMNPR-Y]|(SW|W)([2-9]|[1-9][0-9])|EC[1-9][0-9])( [0-9][ABD-HJLNP-UW-Z]{2})?)$">
+          <input type="text" ng-model="postcode" name="postcode" placeholder="Postcode" required pattern="^(([A-Za-z0-9]{1,4})\s([A-Za-z0-9]{3}))|([A-Za-z0-9]{3,7})$">
         </label>
+        <span class="error" ng-show="restaurantform.postcode.$error.pattern">Not a valid postcode</span>
+
       </div>
       <div class="list list-inset">
         <label class="item item-input">
@@ -26,4 +28,5 @@
       </super-navigate>
       </div>
     </div>
+  </form>
 </div>

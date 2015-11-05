@@ -75,20 +75,21 @@ angular
       });
     };
 
-    // supersonic.ui.views.current.whenVisible(function () {
-    (function init() {
-      var postcode = steroids.view.params.postcode || 'SE19';
-      var maxPrice = steroids.view.params.maxPrice || 10;
-      $scope.MaxPrice = maxPrice;
-      $scope.getRestaurantsAndMeals(postcode, maxPrice).then(function(restaurants){
-        console.log('here12');
-        console.log(restaurants);
-        $scope.restaurants = restaurants;
-      }, function(error) {
-        console.log('hereeerrror');
-        console.log(error);
-      });
-    })();
+    supersonic.ui.views.current.whenVisible(function () {
+      (function init() {
+        var postcode = steroids.view.params.postcode || 'SE19';
+        var maxPrice = steroids.view.params.maxPrice || 10;
+        $scope.MaxPrice = maxPrice;
+        $scope.getRestaurantsAndMeals(postcode, maxPrice).then(function(restaurants){
+          console.log('here12');
+          console.log(restaurants);
+          $scope.restaurants = restaurants;
+        }, function(error) {
+          console.log('hereeerrror');
+          console.log(error);
+        });
+      })();
+    });
 
     $scope.navbarTitle = "API More";
   });
