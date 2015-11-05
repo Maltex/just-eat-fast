@@ -25,7 +25,6 @@ angular
     };
 
     $scope.GetPostcode = function() {
-      console.log('test');
       supersonic.device.geolocation.getPosition().then(function(position) {
         $scope.GetPostcodeFromLatLon(position.coords.latitude, position.coords.longitude)
           .then(function (postcode) {
@@ -62,7 +61,7 @@ angular
     };
 
     supersonic.ui.views.current.whenVisible(function () {
-        var postcode = steroids.view.params.postcode || 'SE19';
+      var postcode = steroids.view.params.postcode || 'SE19';
         $scope.Postcode = postcode.replace(' ','');
         $scope.GetRestaurants($scope.Postcode).then(function(restaurants) {
           $scope.Restaurants = restaurants;
