@@ -5,7 +5,8 @@
     </super-navbar>
     <!-- put cuisine soewhere -->
     <div ng-swipe-left="NextMeal()"
-         ng-swipe-right="MealSelected = true">
+         ng-swipe-right="MealSelected = true"
+         class="slide slide-animation">
       <div class="list-card"
            ng-show="AreRestaurantsAvailable && !MealSelected">
         <div class="item item-avatar">
@@ -16,19 +17,19 @@
         <div class="item item-body">
           <div class="item item-icon-left">
             {{Restaurants[MealIndex].Meal.Starter.name}}
-            <span class="badge badge-energized">&pound;{{Restaurants[MealIndex].Meal.Starter.price}}</span>
+            <span class="badge badge-energized">&pound;{{Restaurants[MealIndex].Meal.Starter.price | currency:''}}</span>
           </div>
           <div class="item item-icon-left">
             {{Restaurants[MealIndex].Meal.Main.name}}
-            <span class="badge badge-energized">&pound;{{Restaurants[MealIndex].Meal.Main.price}}</span>
+            <span class="badge badge-energized">&pound;{{Restaurants[MealIndex].Meal.Main.price | currency:''}}</span>
           </div>
           <div class="item item-icon-left">
             {{Restaurants[MealIndex].Meal.Drink.name}}
-            <span class="badge badge-energized">&pound;{{Restaurants[MealIndex].Meal.Drink.price}}</span>
+            <span class="badge badge-energized">&pound;{{Restaurants[MealIndex].Meal.Drink.price| currency:''}}</span>
           </div>
           <div class="item item-icon-left">
             <b>Total</b>
-            <span class="badge badge-balanced">&pound;{{Restaurants[MealIndex].Meal.Total}}</span>
+            <span class="badge badge-balanced">&pound;{{Restaurants[MealIndex].Meal.Total | currency:''}}</span>
           </div>
         </div>
         <div class="row">
